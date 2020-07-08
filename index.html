@@ -855,7 +855,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                    <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+                                    <!-- <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator">
                                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -874,12 +874,40 @@
                                                 <textarea class="contact-message" id="message" rows="6" placeholder="Your Message" required></textarea>
                                             </div>
                                             
-                                            <!-- Subject Button -->
+                                            
                                             <div class="btn-form col-sm-12">
                                                 <button type="submit" class="btn btn-fill btn-block" id="form-submit">Send Message</button>
                                             </div>
                                         </div>
-                                    </form>
+                                    </form> -->
+                                    <?php if (empty($msg)) { ?>
+                                        <form method="post" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+                                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                            <div class="col-sm-12">
+                                                <label for="subject">Subject: <input type="text" name="subject" id="subject" maxlength="255"></label><br>
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <label for="name">Your name: <input type="text" name="name" id="name" maxlength="255"></label><br>
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <label for="email">Your email address: <input type="email" name="email" id="email" maxlength="255"></label><br>
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <label for="query">Message: </label><br>
+                                                                              
+                                                <textarea cols="30" rows="8" name="query" id="query" placeholder="Your question"></textarea><br>
+                                            </div>
+
+                                            <div class="btn-form col-sm-12">
+                                                <button type="submit" class="btn btn-fill btn-block" id="form-submit">Send Message</button>
+                                            </div>
+                                        </form>
+                                    <?php } else {
+                                        echo $msg;
+                                    } ?>
                                 </div>
                                 <div class="col-sm-12 mh-copyright wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
                                     <div class="row">                                        
